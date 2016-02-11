@@ -1,5 +1,5 @@
 {
-    "cmd": ["lessc", "-x", "$file", "${file_path}/${file_base_name}.css", "--source-map", "--verbose"],
+    "cmd": ["lessc", "--clean-css=--s1 --advanced --compatibility=ie7", "$file", "${file_path}/${file_base_name}.css", "--source-map", "--verbose"],
     "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
     "selector": "source.css.less",
 
@@ -10,13 +10,13 @@
 
     "windows":
     {
-        "cmd": ["lessc.cmd", "-x", "$file", "${file_base_name}.css", "--source-map"]
+        "cmd": ["lessc.cmd", "--clean-css=--s1 --advanced --compatibility=ie7", "$file", "${file_base_name}.css", "--source-map"]
     },
 
     "variants": [
         {
             "name": "Non-Minified",
-            "cmd": ["lessc",  "", "$file", "${file_path}/${file_base_name}.min.css", "--source-map", "--verbose"],
+            "cmd": ["lessc",  "", "$file", "${file_path}/${file_base_name}.css", "--source-map", "--verbose"],
 
             "osx":
             {

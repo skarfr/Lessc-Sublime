@@ -1,0 +1,31 @@
+{
+    "cmd": ["lessc", "--clean-css=--s1 --advanced --compatibility=ie7", "${file_path}/style.less", "../css/style.css", "--source-map", "--verbose"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.css.less",
+
+    "osx":
+    {
+        "path": "/usr/local/bin:$PATH"
+    },
+
+    "windows":
+    {
+        "cmd": ["lessc.cmd", "--clean-css=--s1 --advanced --compatibility=ie7", "${file_path}/style.less", "../css/style.css", "--source-map"]
+    },
+
+    "variants": [
+        {
+            "name": "Non-Minified",
+            "cmd": ["lessc",  "", "${file_path}/style.less", "../css/style.css", "--source-map", "--verbose"],
+
+            "osx":
+            {
+                "path": "/usr/local/bin:$PATH"
+            },
+            "windows":
+            {
+                "cmd": ["lessc.cmd", "", "${file_path}/style.less", "../css/style.css", "--source-map"]
+            }
+        }
+    ]
+}
